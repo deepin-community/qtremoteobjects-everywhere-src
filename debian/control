@@ -6,17 +6,17 @@ Uploaders: Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
            Dmitry Shachnev <mitya57@debian.org>
 Build-Depends: debhelper-compat (= 13),
                pkg-kde-tools,
-               qml-module-qttest (>= 5.15.10+dfsg~),
-               qtbase5-dev (>= 5.15.10+dfsg~),
-               qtbase5-private-dev (>= 5.15.10+dfsg~),
-               qtdeclarative5-dev (>= 5.15.10+dfsg~),
-               qtdeclarative5-private-dev (>= 5.15.10+dfsg~),
+               qml-module-qttest (>= 5.15.8~),
+               qtbase5-dev (>= 5.15.8~),
+               qtbase5-private-dev (>= 5.15.8~),
+               qtdeclarative5-dev (>= 5.15.8~),
+               qtdeclarative5-private-dev (>= 5.15.8~),
                xauth <!nocheck>,
                xvfb <!nocheck>
-Build-Depends-Indep: qdoc-qt5 (>= 5.15.10~) <!nodoc>,
-                     qhelpgenerator-qt5 (>= 5.15.10~) <!nodoc>,
-                     qtattributionsscanner-qt5 (>= 5.15.10~) <!nodoc>,
-                     qtbase5-doc-html (>= 5.15.10+dfsg~) <!nodoc>
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.8~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.8~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.8~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.8~) <!nodoc>
 Standards-Version: 4.6.2
 Homepage: https://doc.qt.io/qt-5/qtremoteobjects-index.html
 Vcs-Git: https://salsa.debian.org/qt-kde-team/qt/qtremoteobjects.git

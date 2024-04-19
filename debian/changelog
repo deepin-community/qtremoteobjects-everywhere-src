@@ -1,3 +1,9 @@
+qtremoteobjects-everywhere-src (5.15.10-3deepin1) unstable; urgency=medium
+
+  * update build-depends 5.15.8.
+
+ -- LiChengGang <lichenggang@uniontech.com>  Fri, 19 Apr 2024 16:14:52 +0800
+
 qtremoteobjects-everywhere-src (5.15.10-3) unstable; urgency=medium
 
   * Regenerate the certificates used in tests and examples with a longer
