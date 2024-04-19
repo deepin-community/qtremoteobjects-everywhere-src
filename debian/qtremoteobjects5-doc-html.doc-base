@@ -1,0 +1,9 @@
+Document: qtremoteobjects5-doc-html
+Title: Qt 5 Remote Objects module
+Author: The Qt Company Ltd
+Abstract: This is the HTML documentation for Qt 5 Remote Objects
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/qtremoteobjects5-doc-html/html/qtremoteobjects/qtremoteobjects-index.html
+Files: /usr/share/doc/qtremoteobjects5-doc-html/html/qtremoteobjects/*.html

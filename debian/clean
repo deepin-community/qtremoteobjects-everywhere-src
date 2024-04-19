@@ -1,0 +1,6 @@
+doc/
+qml/
+src/remoteobjects/QtRemoteObjects.version.in
+src/remoteobjects/codeattributions.qdoc
+test_root/
+tests/auto/cmake/build/
