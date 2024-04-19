@@ -1,15 +1,106 @@
-Source: template-repository
-Section: unknown
+Source: qtremoteobjects-everywhere-src
+Section: libs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
+           Dmitry Shachnev <mitya57@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               pkg-kde-tools,
+               qml-module-qttest (>= 5.15.10+dfsg~),
+               qtbase5-dev (>= 5.15.10+dfsg~),
+               qtbase5-private-dev (>= 5.15.10+dfsg~),
+               qtdeclarative5-dev (>= 5.15.10+dfsg~),
+               qtdeclarative5-private-dev (>= 5.15.10+dfsg~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.10~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.10~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.10~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.10+dfsg~) <!nodoc>
+Standards-Version: 4.6.2
+Homepage: https://doc.qt.io/qt-5/qtremoteobjects-index.html
+Vcs-Git: https://salsa.debian.org/qt-kde-team/qt/qtremoteobjects.git
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt/qtremoteobjects
 
-Package: template-repository
+Package: libqt5remoteobjects5-dev
+Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Multi-Arch: same
+Depends: libqt5remoteobjects5 (= ${binary:Version}),
+         libqt5remoteobjects5-bin (= ${binary:Version}),
+         qtbase5-dev,
+         ${misc:Depends}
+Description: Qt module for IPC — development files
+ The Qt Remote Objects extends Qt's existing functionalities to enable
+ information exchange between processes or computers.
+ .
+ This package contains the development files for qtremoteobjects.
+
+Package: libqt5remoteobjects5-bin
+Architecture: any
+Section: utils
+Multi-Arch: foreign
+Depends: libqt5remoteobjects5 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Qt module for IPC — the Replica Compiler (repc)
+ The Qt Remote Objects extends Qt's existing functionalities to enable
+ information exchange between processes or computers.
+ .
+ The Replica Compiler (repc) generates QObject header files based on an API
+ definition file.
+
+Package: libqt5remoteobjects5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt module for IPC
+ The Qt Remote Objects extends Qt's existing functionalities to enable
+ information exchange between processes or computers.
+ .
+ This package contains the shared library for Qt Remote Objects.
+
+Package: qml-module-qtremoteobjects
+Architecture: any
+Multi-Arch: same
+Depends: qml-module-qtquick2 (>= 5.8), ${misc:Depends}, ${shlibs:Depends}
+Description: Qt module for IPC — QML binding
+ The Qt Remote Objects extends Qt's existing functionalities to enable
+ information exchange between processes or computers.
+ .
+ This package provides the QML module for Qt Remote Objects, which can be
+ used from QML as “import QtRemoteObjects 5.12”.
+
+Package: qtremoteobjects5-examples
+Section: x11
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt Remote Objects examples
+ The Qt Remote Objects extends Qt's existing functionalities to enable
+ information exchange between processes or computers.
+ .
+ This package contains Qt 5 Remote Objects examples.
+
+Package: qtremoteobjects5-doc
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt Remote Objects QCH documentation
+ The Qt Remote Objects extends Qt's existing functionalities to enable
+ information exchange between processes or computers.
+ .
+ This package contains the documentation in QCH format, which can be
+ viewed using Qt Assistant from qt5-assistant package.
+
+Package: qtremoteobjects5-doc-html
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt Remote Objects HTML documentation
+ The Qt Remote Objects extends Qt's existing functionalities to enable
+ information exchange between processes or computers.
+ .
+ This package contains the documentation in HTML format.

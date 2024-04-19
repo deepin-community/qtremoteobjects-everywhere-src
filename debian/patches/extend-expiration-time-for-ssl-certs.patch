@@ -1,0 +1,25 @@
+Description: create SSL certificates with a more realistic expiration date
+Author: Santiago Vila <sanvila@debian.org>
+Forwarded: not-needed
+Last-Update: 2023-12-09
+
+--- a/tests/auto/external_IODevice/cert/generate.sh
++++ b/tests/auto/external_IODevice/cert/generate.sh
+@@ -30,7 +30,7 @@
+ # Generate the CA key
+ openssl genrsa -out rootCA.key 2048
+ # Generate the CA cert
+-openssl req -x509 -key rootCA.key -out rootCA.pem -sha256 -nodes -subj "/CN=QtRO CA" -days 836
++openssl req -x509 -key rootCA.key -out rootCA.pem -sha256 -nodes -subj "/CN=QtRO CA" -days 3651
+ 
+ # genFiles stem [extra args to signing]
+ genFiles () {
+@@ -42,7 +42,7 @@ genFiles () {
+     openssl req -new -key $stem.key -out $stem.csr -subj "/CN=127.0.0.1"
+     # Generate and sign the certificate
+     openssl x509 -req -in $stem.csr -out $stem.crt \
+-                 -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -days 825 -sha256 "$@"
++                 -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -days 3650 -sha256 "$@"
+     # Delete the signing request, no longer needed
+     rm $stem.csr
+ }
